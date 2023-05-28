@@ -24,12 +24,17 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /config
+            - name: backup
+              mountPath: /backup
             - name: usenet
               mountPath: /usenet
       volumes:
         - name: data
           persistentVolumeClaim:
             claimName: data-pvc
+        - name: backup
+          persistentVolumeClaim:
+            claimName: backup-pvc
         - name: usenet
           hostPath:
             path: /media/videos/import/usenet
