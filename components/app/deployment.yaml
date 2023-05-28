@@ -26,8 +26,8 @@ spec:
               mountPath: /config
             - name: backup
               mountPath: /backup
-            - name: usenet
-              mountPath: /usenet
+            - name: videos
+              mountPath: /videos
             - name: scripts
               mountPath: /app/sabnzbd/scripts/clean.py
               subPath: clean.py
@@ -43,7 +43,7 @@ spec:
             claimName: backup-pvc
         - name: usenet
           hostPath:
-            path: /media/videos/import/usenet
+            path: /media/videos
             type: Directory
         - name: scripts
           configMap:
