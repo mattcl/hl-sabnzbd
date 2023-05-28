@@ -28,6 +28,12 @@ spec:
               mountPath: /backup
             - name: usenet
               mountPath: /usenet
+            - name: scripts
+              mountPath: /app/sabnzbd/scripts/clean.py
+              subPath: clean.py
+            - name: scripts
+              mountPath: /app/sabnzbd/scripts/replace_for.py
+              subPath: replace_for.py
       volumes:
         - name: data
           persistentVolumeClaim:
@@ -39,3 +45,7 @@ spec:
           hostPath:
             path: /media/videos/import/usenet
             type: Directory
+        - name: scripts
+          configMap:
+            name: scripts
+            defaultMode: 0755

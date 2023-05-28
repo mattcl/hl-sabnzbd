@@ -8,3 +8,8 @@ resources:
   - ingress.yaml
 commonLabels:
   app.kubernetes.io/name: sabnzbd
+configMapGenerator:
+  - name: scripts
+    files:
+      - "scripts/clean.py"
+      - "scripts/replace_for.py"
