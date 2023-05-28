@@ -23,7 +23,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: data
-              mountPath: /data
+              mountPath: /config
             - name: usenet
               mountPath: /usenet
       volumes:
