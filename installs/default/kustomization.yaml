@@ -7,7 +7,7 @@ namespace: "sabnzbd"
 namePrefix: "sabnzbd-"
 images:
   - name: "linuxserver/sabnzbd"
-    newTag: "4.0.1"
+    newTag: "4.2.2"
 configMapGenerator:
   - name: app-config
     envs:
