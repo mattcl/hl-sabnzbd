@@ -43,7 +43,7 @@ spec:
             claimName: backup-pvc
         - name: videos
           hostPath:
-            path: /mnt/media
+            path: /mnt/downloads
             type: Directory
         - name: scripts
           configMap:
