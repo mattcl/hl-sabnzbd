@@ -29,12 +29,13 @@ except:
 files = os.listdir(directory)
 
 for src in files:
+    orig_path = os.path.join(directory, src)
+    st_info = os.stat(orig_path)
+    os.utime(orig_path, (st_info.st_atime, time()))
     if src.find("_") !=-1:
         dst = src.replace('_', '.')
         new_path = os.path.join(directory, dst)
-        os.rename(os.path.join(directory, src), new_path)
-        st_info = os.stat(new_path)
-        os.utime(new_path, (st_info.st_atime, time()))
+        os.rename(orig_path, new_path)
         print(src, "renamed to ",dst)
 
 print()
